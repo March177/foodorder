@@ -1,0 +1,354 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  color: #800000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-icon img {
+  width: 40px;
+}
+
+#cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* Container Layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: calc(100vh - 60px);
+}
+
+/* Sidebar Styles */
+.sidebar {
+  flex: 1;
+  max-width: 200px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar ul li:hover {
+  background-color: #ffcc00;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 3;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  width: calc(25% - 20px); /* Adjust width to make card smaller */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.product-card h4 {
+  margin: 0;
+  font-size: 18px; /* Slightly adjust font size if needed */
+}
+
+.product-card .price {
+  font-size: 16px;
+  color: #800000;
+  margin-top: 5px;
+}
+
+.product-card button {
+  background-color: #ffcc00;
+  border: none;
+  color: #800000;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+  background-color: #e6b800;
+}
+
+/* Order Summary Styles */
+.order-summary {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.order-summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-summary-content .order-button {
+  background-color: #800000;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.order-summary-content .order-button:hover {
+  background-color: #600000;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.order-item-image {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.order-item-details {
+  margin-left: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.order-item-details span.name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.order-item-details span.price {
+  font-size: 14px;
+  color: #800000;
+}
+
+.order-item-details .quantity-controls {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.quantity-controls button {
+  background-color: #ffcc00;
+  border: none;
+  padding: 5px;
+  color: #800000;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.quantity-controls span {
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.remove-btn {
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.remove-btn:hover {
+  background-color: #cc0000;
+}
+
+#total-price {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .main-content,
+  .order-summary {
+    width: 100%;
+  }
+
+  .product-card {
+    width: calc(50% - 20px); /* Adjust for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    width: calc(100% - 20px); /* Adjust for small screens */
+  }
+
+  .order-summary {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-icon {
+    margin-top: 10px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+}
+
+/* Styles for the dark overlay background */
+.order-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+  display: none; /* Hidden by default */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 1000; /* Ensure it's on top */
+}
+
+/* Styles for the popup itself */
+.order-popup {
+  background: #fff; /* White background for the popup */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  padding: 20px;
+  max-width: 500px; /* Maximum width */
+  width: 100%;
+  position: relative; /* Ensure that close button is positioned correctly */
+}
+
+/* Styles for the close button */
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333; /* Dark color for the close button */
+}
+
+/* Styles for the popup content */
+.popup-content {
+  position: relative;
+  padding: 20px;
+}
+
+/* Ensure popup footer buttons are styled */
+.popup-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.checkout-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.order-more-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.order-more-btn:hover,
+.checkout-btn:hover {
+  opacity: 0.8;
+}
